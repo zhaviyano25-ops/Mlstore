@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-neon-blue: #00f2ff;
+  --color-neon-purple: #bc13fe;
+  --color-gaming-dark: #0a0b10;
+  --color-gaming-card: #161821;
+}
+
+@layer base {
+  body {
+    @apply bg-gaming-dark text-white font-sans antialiased;
+  }
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 15px rgba(188, 19, 254, 0.3);
+}
+
+.glass-nav {
+  @apply bg-gaming-dark/80 backdrop-blur-md border-b border-white/5;
+}
+
+.gaming-card {
+  @apply bg-gaming-card border border-white/5 rounded-2xl transition-all duration-300;
+}
+
+.gaming-card:hover {
+  @apply border-neon-blue/50;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-neon-blue to-neon-purple text-gaming-dark font-bold py-3 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-neon-blue/20;
+}
+
+.btn-primary:hover {
+  @apply scale-105;
+}
+
+.btn-primary:active {
+  @apply scale-95;
+}
+
+.input-field {
+  @apply bg-gaming-dark border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-all;
+}
